@@ -9,7 +9,7 @@ arr_world_map_pvp_bosses = [
 ]
 
 #Tested; this works very well 
-arr_world_map = [
+arr_world_map_back_end = [
 
     [BattleTile(0, 0, "Wano", "South Western", arr_world_map_pvp_bosses[0][0]), BattleTile(0, 1, "Skypeia", "Western", arr_world_map_pvp_bosses[0][1]), BattleTile(0, 2, "Elbaf", "North Western", arr_world_map_pvp_bosses[0][2])],
     [BattleTile(1, 0, "Wholecake", "Southern", arr_world_map_pvp_bosses[1][0]), BattleTile(1, 1, "Romance Dawn", "Central", arr_world_map_pvp_bosses[1][1]), BattleTile(1, 2, "Drum", "Northern", arr_world_map_pvp_bosses[1][2])],

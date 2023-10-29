@@ -34,3 +34,8 @@ arr_world_map_front_end = [
     ["*", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *"]
 ]
 
+action_options_travel_north = ['North', 'NORTH', 'north', 'N', 'n', '^']
+action_options_travel_east = ['East', 'EAST', 'east', 'E', 'e', '>']
+action_options_travel_south = ['South', 'SOUTH', 'south', 'S', 's', 'v']
+action_options_travel_west = ['West', 'WEST', 'west', 'W', 'w', '<']
+action_options_game_quit = ['Quit', 'QUIT', 'quit', 'Q', 'q']

@@ -10,6 +10,7 @@ class MapTile:
         self.int_loc_x_tile_quadrant_label_a = int_loc_x_tile_quadrant_label_a
         self.int_loc_y_tile_quadrant_label_a = int_loc_y_tile_quadrant_label_a
 
+        
         self.int_loc_x_tile_quadrant_label_b = int_loc_x_tile_quadrant_label_a
         self.int_loc_y_tile_quadrant_label_b = int_loc_y_tile_quadrant_label_a + 1 
     

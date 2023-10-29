@@ -2,6 +2,7 @@ from Player import Player
 from functions import set_player_name, set_player_age, set_player_home_city
 from Tile import MapTile, BattleTile
 from data_structures import arr_world_map_back_end, arr_world_map_front_end
+from data_structures import action_options_travel_north, action_options_travel_east, action_options_travel_south, action_options_travel_west, action_options_game_quit
 
 def play():
 
@@ -13,31 +14,34 @@ def play():
 
     while ((user_player.bool_game_has_been_won != True) and (bool_game_is_on == True)):
 
-        #The actual game loop which runs indefinitely until one of two conditions are met: the game is one, or the player chooses to quit
-        #Back End Render
-        for x in range(len(arr_world_map_back_end)):
-            for y in range(len(arr_world_map_back_end[x])):
-                print(arr_world_map_back_end[x][y])
-                print("\n")
-    
         #Front End Render
         for x in range(len(arr_world_map_front_end)):
             for y in range(len(arr_world_map_front_end[x])):
                 print(arr_world_map_front_end[x][y], end="")
             print("")
         
-        arr_world_map_front_end[10][2] = " V "
-        arr_world_map_front_end[10][3] = " "
-
-        print(" ")
-
-        for x in range(len(arr_world_map_front_end)):
-            for y in range(len(arr_world_map_front_end[x])):
-                print(arr_world_map_front_end[x][y], end="")
-            print("")
+        user_player_current_tile_location = user_player.get_player_current_tile_location(arr_world_map_back_end)
         
+        user_player_action = input(f"What would you like to do Captain {user_player.str_name}?\n")
 
-        bool_game_is_on = False
+        if user_player_action in action_options_travel_north:
+            print("You're travelling North")
+        elif user_player_action in action_options_travel_east:
+            print("You're travelling East")
+        elif user_player_action in action_options_travel_south:
+            print("You're travelling South")
+        elif user_player_action in action_options_travel_west:
+            print("You're travelling West")
+        elif user_player_action in action_options_game_quit:
+            user_player_action_quit_confirmation = input("Are you sure you'd like to (Q)uit? Please confirm once more by typing in the word 'QUIT'\n")
+            if user_player_action_quit_confirmation in action_options_game_quit:
+                print("See you soon Captain")
+                bool_game_is_on = False
+            else:
+                print("The marathon continues")
+        else:
+            print("Invalid option: try again Captain!")
+    
 
 play()
 

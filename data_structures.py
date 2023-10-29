@@ -11,14 +11,26 @@ arr_world_map_pvp_bosses = [
 #Tested; this works very well 
 arr_world_map_back_end = [
 
-    [BattleTile(0, 0, "Wano", "South Western", arr_world_map_pvp_bosses[0][0]), BattleTile(0, 1, "Skypeia", "Western", arr_world_map_pvp_bosses[0][1]), BattleTile(0, 2, "Elbaf", "North Western", arr_world_map_pvp_bosses[0][2])],
-    [BattleTile(1, 0, "Wholecake", "Southern", arr_world_map_pvp_bosses[1][0]), BattleTile(1, 1, "Romance Dawn", "Central", arr_world_map_pvp_bosses[1][1]), BattleTile(1, 2, "Drum", "Northern", arr_world_map_pvp_bosses[1][2])],
-    [BattleTile(2, 0, "Alabasta", "Eastern", arr_world_map_pvp_bosses[2][0]), BattleTile(2, 1, "Fishman", "Eastern", arr_world_map_pvp_bosses[2][1]), BattleTile(2, 2, "Hachinosu", "North Eastern", arr_world_map_pvp_bosses[2][2])]
+    [BattleTile(0, 0, "Wano", "South Western", arr_world_map_pvp_bosses[0][0], 10, 2), BattleTile(0, 1, "Skypeia", "Western", arr_world_map_pvp_bosses[0][1], 6, 2), BattleTile(0, 2, "Elbaf", "North Western", arr_world_map_pvp_bosses[0][2], 2, 2)],
+    [BattleTile(1, 0, "Wholecake", "Southern", arr_world_map_pvp_bosses[1][0], 10, 6), BattleTile(1, 1, "Romance Dawn", "Central", arr_world_map_pvp_bosses[1][1], 6, 6), BattleTile(1, 2, "Drum", "Northern", arr_world_map_pvp_bosses[1][2], 2, 6)],
+    [BattleTile(2, 0, "Alabasta", "South Eastern", arr_world_map_pvp_bosses[2][0], 10, 10), BattleTile(2, 1, "Fishman", "Eastern", arr_world_map_pvp_bosses[2][1], 6, 10), BattleTile(2, 2, "Hachinosu", "North Eastern", arr_world_map_pvp_bosses[2][2], 2, 10)]
 ]
 
+#Tested; this works very well 
+arr_world_map_front_end = [
 
-#for x in range(len(arr_world_map)):
-#for y in range(len(arr_world_map[x])):
-#print(arr_world_map[x][y])
-#print("\n")
+    ["*", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *"], 
+    ["*", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *"], 
+    ["*", "  ", " NW", " ", " *", "  ", " N ", " ", " *", "  ", " NE", " ", " *"], 
+    ["*", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *"], 
+    ["*", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *"], 
+    ["*", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *"], 
+    ["*", "  ", " W ", " ", " *", "  ", " C ", " ", " *", "  ", " E ", " ", " *"], 
+    ["*", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *"], 
+    ["*", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *"], 
+    ["*", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *"], 
+    ["*", "  ", " SW", " ", " *", "  ", " S ", " ", " *", "  ", " SE", " ", " *"], 
+    ["*", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *", "  ", "  ", "  ", " *"], 
+    ["*", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *"]
+]
 

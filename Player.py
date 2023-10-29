@@ -7,6 +7,8 @@ class Player:
         self.str_place_of_birth = str_place_of_birth
 
         self.hp = 100 
+
+        self.bool_game_has_been_won = False 
     
     def __str__(self):
 

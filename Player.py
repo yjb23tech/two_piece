@@ -16,7 +16,7 @@ class Player:
         self.obj_weapon_in_hand = None
         self.arr_objs_weapons_inventory = [DoubleAxe("Double Axe", "Mjolnir"), BroadSword("Broad Sword", "Requiem"), LongGun("Long Gun", "Flying Death")]
 
-        
+
 
         self.bool_game_has_been_won = False 
     
@@ -41,7 +41,7 @@ class Player:
 
     def set_weapon(self):
 
-        print(f"\nYou have the following weapons available to you Captain {self.str_name}:\n")
+        print(f"\nYou have the following weapons available to you Captain:\n")
 
         current_weapons_inventory = self.arr_objs_weapons_inventory
 
@@ -57,7 +57,11 @@ class Player:
                 print(f"You have chosen to wield the {self.obj_weapon_in_hand.str_weapon_name}; happy hunting Sailor!")
                 valid_weapon_selection = True
             except ValueError:
-                print(f"Invalid weapon selection; try again")
+                print(f"\nInvalid weapon selection; try again")
+            except IndexError:
+                print(f"\nInvalid weapon selection; try again")
+
+
 
     
 

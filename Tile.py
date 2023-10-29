@@ -56,8 +56,8 @@ class BattleTile(MapTile):
             elif user_player_change_weapon == 'N':
                 print(f"\nGreat choice! You will continue to use the {user_player.obj_weapon_in_hand.str_weapon_name} - let's go!")
             else:
-                print(f"Your option was not recognised Captain! Clearly too much rum in your belly XD!!!")
-                print(f"No matter - you can always count on {user_player.obj_weapon_in_hand.str_weapon_name} :D")
+                print(f"\nYour option was not recognised Captain! Clearly too much rum in your belly XD!!!")
+                print(f"No matter - you can always count on the {user_player.obj_weapon_in_hand.str_weapon_name} :D")
             
             print("\nLET'S FIGHT!\n")
             while tile_boss.int_hp > 0:

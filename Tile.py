@@ -47,8 +47,14 @@ class BattleTile(MapTile):
             if user_player.obj_weapon_in_hand == None:
                 print(f"\nOh no you're unarmed :S Please choose a weapon immediately Captain {user_player.str_name}!")
                 user_player.set_weapon()
+
+            print(f"\nYou're currently wielding {user_player.obj_weapon_in_hand.str_weapon_name}")
+            user_player_change_weapon = input("Would you like to change your weapon? Press Y to change your weapon or N to continue with your current weapon\n")
+
+            if user_player_change_weapon == 'Y':
+                user_player.set_weapon()
             
-            print("\nLet's fight!\n")
+            print("\nLET'S FIGHT!\n")
             while tile_boss.int_hp > 0:
 
                 print(f"{user_player.str_name} lands a devastating blow on {tile_boss.str_name}! {tile_boss.str_name} has lost {user_player.obj_weapon_in_hand.int_atk_pwr} health points!")

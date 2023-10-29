@@ -14,6 +14,8 @@ def play():
 
     while ((user_player.bool_game_has_been_won != True) and (bool_game_is_on == True)):
 
+        print("\n===========================================================================================================================================\n")
+
         #Front End Render; solely concerned with visualisation - changes on the backend which manipulate the front end will be made further down in the code 
         for x in range(len(arr_world_map_front_end)):
             for y in range(len(arr_world_map_front_end[x])):

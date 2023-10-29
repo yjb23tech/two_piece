@@ -1,5 +1,6 @@
 from Player import Player
 from functions import set_player_name, set_player_age, set_player_home_city
+from functions import active_tile_validation, proposed_tile_game_sequence
 from Tile import MapTile, BattleTile
 from data_structures import arr_world_map_back_end, arr_world_map_front_end
 from data_structures import action_options_travel_north, action_options_travel_east, action_options_travel_south, action_options_travel_west, action_options_game_quit
@@ -8,30 +9,47 @@ def play():
 
     bool_game_is_on = True 
 
-    #Things I need to only happen once
     user_player = Player(set_player_name(), set_player_age(), set_player_home_city())
     print(user_player)
 
     while ((user_player.bool_game_has_been_won != True) and (bool_game_is_on == True)):
 
-        #Front End Render
+        #Front End Render; solely concerned with visualisation - changes on the backend which manipulate the front end will be made further down in the code 
         for x in range(len(arr_world_map_front_end)):
             for y in range(len(arr_world_map_front_end[x])):
                 print(arr_world_map_front_end[x][y], end="")
             print("")
         
+        #Establish the Player's current location within the map before any decicions can be made to update their being within the game 
         user_player_current_tile_location = user_player.get_player_current_tile_location(arr_world_map_back_end)
+
+        #Based on the Player's current location, dynamically present a series of viable options available to the Player
+        #Based on the Player's current location, dynamically present a series of unviable options available to the Player
         
+        #Prompt the Player to make a decision which has the ability to interact with the game based on the options above
         user_player_action = input(f"What would you like to do Captain {user_player.str_name}?\n")
 
         if user_player_action in action_options_travel_north:
-            print("You're travelling North")
+
+            #Validation Series: a decision to travel North is equivalent to the following vector [0, 1]; Does this decision to travel North lead to an error? This must be established 
+            proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, 0, 1)
+            proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+        
         elif user_player_action in action_options_travel_east:
-            print("You're travelling East")
+
+            proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, 1, 0)
+            proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+
         elif user_player_action in action_options_travel_south:
-            print("You're travelling South")
+
+            proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, 0, -1)
+            proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+
         elif user_player_action in action_options_travel_west:
-            print("You're travelling West")
+
+            proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, -1, 0)
+            proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+
         elif user_player_action in action_options_game_quit:
             user_player_action_quit_confirmation = input("Are you sure you'd like to (Q)uit? Please confirm once more by typing in the word 'QUIT'\n")
             if user_player_action_quit_confirmation in action_options_game_quit:

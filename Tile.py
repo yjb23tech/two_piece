@@ -1,6 +1,8 @@
 class MapTile:
 
-    def __init__(self, int_loc_x, int_loc_y, str_tile_name, str_tile_quadrant, int_loc_x_tile_quadrant_label_a, int_loc_y_tile_quadrant_label_a):
+    def __init__(self, str_tile_type, int_loc_x, int_loc_y, str_tile_name, str_tile_quadrant, int_loc_x_tile_quadrant_label_a, int_loc_y_tile_quadrant_label_a):
+
+        self.str_tile_type = str_tile_type
 
         self.int_loc_x = int_loc_x
         self.int_loc_y = int_loc_y
@@ -10,7 +12,7 @@ class MapTile:
         self.int_loc_x_tile_quadrant_label_a = int_loc_x_tile_quadrant_label_a
         self.int_loc_y_tile_quadrant_label_a = int_loc_y_tile_quadrant_label_a
 
-        
+
         self.int_loc_x_tile_quadrant_label_b = int_loc_x_tile_quadrant_label_a
         self.int_loc_y_tile_quadrant_label_b = int_loc_y_tile_quadrant_label_a + 1 
     
@@ -20,11 +22,11 @@ class MapTile:
 
 class BattleTile(MapTile):
 
-    def __init__(self, int_loc_x, int_loc_y, str_tile_name, str_tile_quadrant, obj_tile_pvp_boss, int_loc_x_tile_quadrant_label_a, int_loc_y_tile_quadrant_label_a):
+    def __init__(self, str_tile_type, int_loc_x, int_loc_y, str_tile_name, str_tile_quadrant, obj_tile_pvp_boss, int_loc_x_tile_quadrant_label_a, int_loc_y_tile_quadrant_label_a):
 
         self.obj_tile_pvp_boss = obj_tile_pvp_boss
 
-        super().__init__(int_loc_x, int_loc_y, str_tile_name, str_tile_quadrant, int_loc_x_tile_quadrant_label_a, int_loc_y_tile_quadrant_label_a)
+        super().__init__(str_tile_type, int_loc_x, int_loc_y, str_tile_name, str_tile_quadrant, int_loc_x_tile_quadrant_label_a, int_loc_y_tile_quadrant_label_a)
     
     def __str__(self):
 

@@ -23,6 +23,11 @@ class Player:
         print(f"\nYou're currently on {player_current_tile_location.str_tile_name} Island in the {player_current_tile_location.str_tile_quadrant} quadrant of the map")
         print(f"Your current coordinate location is [{self.int_loc_x}, {self.int_loc_y}]\n")
         return player_current_tile_location
+    
+    def set_player_current_tile_location(self, active_tile):
+
+        self.int_loc_x = active_tile.int_loc_x
+        self.int_loc_y = active_tile.int_loc_y 
 
 
     

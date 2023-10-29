@@ -40,11 +40,11 @@ def active_tile_validation(arr_world_map_backend, user_player, chosen_direction_
 
 def update_game_settings_battle_pass(proposed_tile, arr_world_map_backend, arr_world_map_front_end, user_player):
 
-    if proposed_tile.tile_type == "Battle Tile": 
+    if proposed_tile.str_tile_type == "Battle Tile": 
         arr_world_map_front_end[proposed_tile.int_loc_x_tile_quadrant_label_a][proposed_tile.int_loc_y_tile_quadrant_label_a] = " V "
         arr_world_map_front_end[proposed_tile.int_loc_x_tile_quadrant_label_b][proposed_tile.int_loc_y_tile_quadrant_label_b] = " "
         user_player.set_player_current_tile_location(proposed_tile)
-    elif proposed_tile.tile_type == "Trading Tile":
+    elif proposed_tile.str_tile_type == "Trading Tile":
         user_player.set_player_current_tile_location(proposed_tile)
     else:
         pass

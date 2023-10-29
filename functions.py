@@ -35,12 +35,14 @@ def active_tile_validation(arr_world_map_backend, user_player, chosen_direction_
         active_tile = arr_world_map_backend[proposed_int_loc_x][proposed_int_loc_y]
         return active_tile
     except IndexError:
-        print("Those are uncharted waters ye be seeking... tis unsafe to go where no man has gone before...")
+        print("\nThose are uncharted waters ye be seeking... tis unsafe to go where no man has gone before...")
         return None
 
 def update_game_settings_battle_pass(proposed_tile, arr_world_map_backend, arr_world_map_front_end, user_player):
 
     if proposed_tile.str_tile_type == "Battle Tile": 
+
+        print(f"Well done Captain {user_player.str_name}! In lieu of your great win, this quadrant on the map will be updated with the letter V for victory XD\n")
         arr_world_map_front_end[proposed_tile.int_loc_x_tile_quadrant_label_a][proposed_tile.int_loc_y_tile_quadrant_label_a] = " V "
         arr_world_map_front_end[proposed_tile.int_loc_x_tile_quadrant_label_b][proposed_tile.int_loc_y_tile_quadrant_label_b] = " "
         user_player.set_player_current_tile_location(proposed_tile)

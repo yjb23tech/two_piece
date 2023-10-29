@@ -30,7 +30,7 @@ class BattleTile(MapTile):
     
     def __str__(self):
 
-        battle_tile_welcome_msg = (f"Welcome to {self.str_tile_name} Island located in the {self.str_tile_quadrant} quadrant of the Map, coordinates [{self.int_loc_x}, {self.int_loc_y}]")
+        battle_tile_welcome_msg = (f"\nWelcome to {self.str_tile_name} Island located in the {self.str_tile_quadrant} quadrant of the Map, coordinates [{self.int_loc_x}, {self.int_loc_y}]")
         battle_tile_pvp_boss_msg = (f"Be careful young sailor... the Captain of this island is none other than the infamous {self.obj_tile_pvp_boss.str_name}")
 
         return (f"{battle_tile_welcome_msg}\n{battle_tile_pvp_boss_msg}")
@@ -45,13 +45,16 @@ class BattleTile(MapTile):
 
             user_player.get_weapon()
             if user_player.obj_weapon_in_hand == None:
-                print(f"Unarmed; please choose a weapon Captain{user_player.str_name}")
+                print(f"\nOh no you're unarmed :S Please choose a weapon immediately Captain {user_player.str_name}!")
                 user_player.set_weapon()
             
+            print("\nLet's fight!\n")
             while tile_boss.int_hp > 0:
-                
+
+                print(f"{user_player.str_name} lands a devastating blow on {tile_boss.str_name}! {tile_boss.str_name} has lost {user_player.obj_weapon_in_hand.int_atk_pwr} health points!")
                 tile_boss.int_hp -= user_player.obj_weapon_in_hand.int_atk_pwr 
-                print(f"{tile_boss.str_name} has been defeated!")
+            
+            print(f"\n{tile_boss.str_name} has been defeated!")
 
 
 

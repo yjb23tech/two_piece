@@ -34,3 +34,12 @@ if active_tile == None:
             else:
                 print(active_tile)
                 user_player.set_player_current_tile_location(active_tile)
+
+#Player should have the option to choose from a collection of weapons
+                #Player should also be able to pick their strongest weapon 
+                user_player.get_weapon()
+
+                if user_player.obj_weapon_in_hand == None:
+                    print(f"Unarmed; please choose a weapon Captain {user_player.str_name} ")
+                    user_player.set_weapon()
+                else:

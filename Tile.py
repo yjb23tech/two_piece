@@ -34,6 +34,31 @@ class BattleTile(MapTile):
         battle_tile_pvp_boss_msg = (f"Be careful young sailor... the Captain of this island is none other than the infamous {self.obj_tile_pvp_boss.str_name}")
 
         return (f"{battle_tile_welcome_msg}\n{battle_tile_pvp_boss_msg}")
+    
+    def pvp_sequence_against_tile_boss(self, user_player):
+
+        tile_boss = self.obj_tile_pvp_boss
+
+        if tile_boss.int_hp <= 0:
+            print("NFA")
+        else:
+
+            user_player.get_weapon()
+            if user_player.obj_weapon_in_hand == None:
+                print(f"Unarmed; please choose a weapon Captain{user_player.str_name}")
+                user_player.set_weapon()
+            
+            while tile_boss.int_hp > 0:
+                
+                tile_boss.int_hp -= user_player.obj_weapon_in_hand.int_atk_pwr 
+                print(f"{tile_boss.str_name} has been defeated!")
+
+
+
+
+
+
+
 
 
 

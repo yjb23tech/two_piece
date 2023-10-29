@@ -59,6 +59,7 @@ def proposed_tile_game_sequence(proposed_tile, arr_world_map_backend, arr_world_
 
         #Trade
         #Fight
+        proposed_tile.pvp_sequence_against_tile_boss(user_player)
         update_game_settings_battle_pass(proposed_tile, arr_world_map_backend, arr_world_map_front_end, user_player)
     
 

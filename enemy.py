@@ -7,6 +7,8 @@ class Enemy:
         self.str_name = str_name
         self.str_weapon_name = str_weapon_name
         self.int_gold_value = random.randint(30, 50)
+
+        self.int_hp = 100
     
     def __str__(self):
 

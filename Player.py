@@ -1,3 +1,5 @@
+from weapons import DoubleAxe, BroadSword, LongGun
+
 class Player:
 
     def __init__(self, str_name, int_age, str_place_of_birth):
@@ -10,6 +12,10 @@ class Player:
         self.int_loc_y = 1 
 
         self.hp = 100 
+
+        self.obj_weapon_in_hand = None
+
+        self.arr_objs_weapons_inventory = [DoubleAxe("Double Axe", "Mjolnir"), BroadSword("Broad Sword", "Requiem"), LongGun("Long Gun", "Flying Death")]
 
         self.bool_game_has_been_won = False 
     
@@ -28,7 +34,29 @@ class Player:
 
         self.int_loc_x = active_tile.int_loc_x
         self.int_loc_y = active_tile.int_loc_y 
+    
+    def get_weapon(self):
+        return self.obj_weapon_in_hand
 
+    def set_weapon(self):
+
+        print(f"\nYou have the following weapons available to you Captain {self.str_name}:\n")
+
+        current_weapons_inventory = self.arr_objs_weapons_inventory
+
+        for x, weapon in enumerate(current_weapons_inventory, 1):
+            print(f"{x}. {weapon}")
+
+        valid_weapon_selection = False
+        
+        while valid_weapon_selection == False:
+            try:
+                chosen_weapon = int(input("\nUsing the number pad, enter the number corresponding to your weapon of choice:\n"))
+                self.obj_weapon_in_hand = current_weapons_inventory[chosen_weapon - 1]
+                print(f"You have chosen to wield the {self.obj_weapon_in_hand.str_weapon_name}; happy hunting Sailor!")
+                valid_weapon_selection = True
+            except ValueError:
+                print(f"Invalid weapon selection; try again")
 
     
 

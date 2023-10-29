@@ -58,7 +58,7 @@ def play():
             else:
                 print("The marathon continues")
         else:
-            print("Invalid option: try again Captain!")
+            print("\nInvalid option: try again Captain!\n")
     
 
 play()

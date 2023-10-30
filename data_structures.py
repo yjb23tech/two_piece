@@ -34,6 +34,8 @@ arr_world_map_front_end = [
     ["*", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *", " *"]
 ]
 
+arr_world_map_islands_collection = ["Wano", "Wholecake", "Alabasta", "Skypeia", "Romance Dawn", "Fishman", "Elbaf", "Drum", "Hachinosu"]
+
 action_options_travel_north = ['North', 'NORTH', 'north', 'N', 'n', '^']
 action_options_travel_east = ['East', 'EAST', 'east', 'E', 'e', '>']
 action_options_travel_south = ['South', 'SOUTH', 'south', 'S', 's', 'v']

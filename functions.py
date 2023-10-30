@@ -46,6 +46,7 @@ def update_game_settings_battle_pass(proposed_tile, arr_world_map_backend, arr_w
         arr_world_map_front_end[proposed_tile.int_loc_x_tile_quadrant_label_a][proposed_tile.int_loc_y_tile_quadrant_label_a] = " V "
         arr_world_map_front_end[proposed_tile.int_loc_x_tile_quadrant_label_b][proposed_tile.int_loc_y_tile_quadrant_label_b] = " "
         user_player.set_player_current_tile_location(proposed_tile)
+        user_player.arr_islands_conquered.append(proposed_tile.str_tile_name)
     elif proposed_tile.str_tile_type == "Trading Tile":
         user_player.set_player_current_tile_location(proposed_tile)
     else:
@@ -64,5 +65,46 @@ def proposed_tile_game_sequence(proposed_tile, arr_world_map_backend, arr_world_
         proposed_tile.pvp_sequence_against_tile_boss(user_player)
         update_game_settings_battle_pass(proposed_tile, arr_world_map_backend, arr_world_map_front_end, user_player)
     
+
+def islands_conquered_checklist(user_player, arr_world_map_islands_collection):
+
+    arr_conquered_islands = []
+    arr_unconquered_islands = []
+
+    if (len(user_player.arr_islands_conquered) == 0):
+        pass
+    else:
+
+        for island in arr_world_map_islands_collection:
+
+            if island in user_player.arr_islands_conquered:
+                arr_conquered_islands.append(island)
+
+            else:
+                arr_unconquered_islands.append(island)
+        
+        print(f"YeeHaw! Captain {user_player.str_name}! You have conquered the following islands:\n")
+        x = 1
+        for island in arr_conquered_islands:
+            print(f"{x}. {island} Island")
+            x += 1
+        
+        if len(arr_unconquered_islands) != 0:
+            print(f"\nYou still have the following islands to conquer:\n")
+            y = 1
+            for island in arr_unconquered_islands:
+                print(f"{y}. {island} Island")
+                y += 1 
+            
+            user_player.bool_game_has_been_won = False
+        else:
+
+            print(f"Congrulations {user_player.str_name} you have conquered all of the islands - the game is complete XD")
+            user_player.bool_game_has_been_won = True
+
+
+        
+
+            
 
 

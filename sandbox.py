@@ -1,8 +1,8 @@
 from Player import Player
 from functions import set_player_name, set_player_age, set_player_home_city
-from functions import active_tile_validation, proposed_tile_game_sequence
+from functions import active_tile_validation, proposed_tile_game_sequence, islands_conquered_checklist
 from Tile import MapTile, BattleTile
-from data_structures import arr_world_map_back_end, arr_world_map_front_end
+from data_structures import arr_world_map_back_end, arr_world_map_front_end, arr_world_map_islands_collection
 from data_structures import action_options_travel_north, action_options_travel_east, action_options_travel_south, action_options_travel_west, action_options_game_quit
 
 def play():
@@ -36,21 +36,25 @@ def play():
             #Validation Series: a decision to travel North is equivalent to the following vector [0, 1]; Does this decision to travel North lead to an error? This must be established 
             proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, 0, 1)
             proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+            islands_conquered_checklist(user_player, arr_world_map_islands_collection)
         
         elif user_player_action in action_options_travel_east:
 
             proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, 1, 0)
             proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+            islands_conquered_checklist(user_player, arr_world_map_islands_collection)
 
         elif user_player_action in action_options_travel_south:
 
             proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, 0, -1)
             proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+            islands_conquered_checklist(user_player, arr_world_map_islands_collection)
 
         elif user_player_action in action_options_travel_west:
 
             proposed_tile = active_tile_validation(arr_world_map_back_end, user_player, -1, 0)
             proposed_tile_game_sequence(proposed_tile, arr_world_map_back_end, arr_world_map_front_end, user_player)
+            islands_conquered_checklist(user_player, arr_world_map_islands_collection)
 
         elif user_player_action in action_options_game_quit:
             user_player_action_quit_confirmation = input("Are you sure you'd like to (Q)uit? Please confirm once more by typing in the word 'QUIT'\n")

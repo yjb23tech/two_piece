@@ -16,7 +16,7 @@ class Player:
         self.obj_weapon_in_hand = None
         self.arr_objs_weapons_inventory = [DoubleAxe("Double Axe", "Mjolnir"), BroadSword("Broad Sword", "Requiem"), LongGun("Long Gun", "Flying Death")]
 
-
+        self.arr_islands_conquered = []
 
         self.bool_game_has_been_won = False 
     

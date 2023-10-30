@@ -42,3 +42,54 @@ action_options_travel_south = ['South', 'SOUTH', 'south', 'S', 's', 'v']
 action_options_travel_west = ['West', 'WEST', 'west', 'W', 'w', '<']
 action_options_game_quit = ['Quit', 'QUIT', 'quit', 'Q', 'q']
 
+dict_action_horiz_vector_options = {
+
+    -1: {
+
+        0: {
+            
+            "West"
+
+        }
+    }, 
+
+    0: {
+
+        0: {
+
+            "No Movement"
+
+        }
+    },
+
+    1: {
+
+        0: {
+
+            "East"
+        }
+    }
+
+
+}
+
+dict_action_vertical_vector_options = {
+
+    0: {
+
+        -1: {
+
+            "South"
+        }, 
+
+        0: {
+
+            "Stationary"
+        }, 
+
+        1: {
+
+            "North"
+        }
+    }
+}

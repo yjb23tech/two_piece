@@ -22,6 +22,16 @@ def set_player_home_city() -> str:
     chosen_user_home_city = input("\nAnd where are you from originally Sailor?\n")
     return chosen_user_home_city
 
+def available_action_options(user_player, arr_world_map_backend):
+
+    try:
+
+        #Can I travel North?
+        possible_north_tile = arr_world_map_backend[user_player.int_loc_x][user_player.int_loc_y + 1]
+        #Can I travel East? 
+        possible_east_tile = arr_world_map_backend[user_player.int_loc_x +1][user_player.int_loc_y]
+
+
 def active_tile_validation(arr_world_map_backend, user_player, chosen_direction_int_loc_x, chosen_direction_int_loc_y):
     
     proposed_int_loc_x = user_player.int_loc_x + chosen_direction_int_loc_x

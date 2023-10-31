@@ -8,8 +8,8 @@ class Player:
         self.int_age = int_age
         self.str_place_of_birth = str_place_of_birth
 
-        self.int_loc_x = 2
-        self.int_loc_y = 2 
+        self.int_loc_x = 1
+        self.int_loc_y = 1
 
         self.hp = 100 
 

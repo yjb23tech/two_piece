@@ -46,30 +46,18 @@ dict_action_horiz_vector_options = {
 
     -1: {
 
-        0: {
-            
-            "West"
-
-        }
+        0: "West"
     }, 
 
     0: {
 
-        0: {
-
-            "No Movement"
-
-        }
+        0: "No Movement"
     },
 
     1: {
 
-        0: {
-
-            "East"
-        }
+        0: "East"
     }
-
 
 }
 
@@ -77,19 +65,10 @@ dict_action_vertical_vector_options = {
 
     0: {
 
-        -1: {
+        -1: "South", 
 
-            "South"
-        }, 
+        0: "Stationary", 
 
-        0: {
-
-            "Stationary"
-        }, 
-
-        1: {
-
-            "North"
-        }
+        1: "North"
     }
 }

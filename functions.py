@@ -22,15 +22,59 @@ def set_player_home_city() -> str:
     chosen_user_home_city = input("\nAnd where are you from originally Sailor?\n")
     return chosen_user_home_city
 
-def available_action_options(user_player, arr_world_map_backend):
+def available_action_options(user_player, arr_world_map_backend, dict_horiz_actions, dict_vert_actions):
 
-    try:
+    arr_available_action_options = []
+    arr_unavailable_action_options = []
 
-        #Can I travel North?
-        possible_north_tile = arr_world_map_backend[user_player.int_loc_x][user_player.int_loc_y + 1]
-        #Can I travel East? 
-        possible_east_tile = arr_world_map_backend[user_player.int_loc_x +1][user_player.int_loc_y]
+    for x in dict_horiz_actions:
+        for y in dict_horiz_actions[x]:
 
+            potential_int_loc_x = user_player.int_loc_x + x
+            potential_int_loc_y = user_player.int_loc_y + y 
+
+            try:
+                if potential_int_loc_x < 0:
+                    raise IndexError
+                potential_tile = arr_world_map_backend[potential_int_loc_x][potential_int_loc_y]
+                arr_available_action_options.append(dict_horiz_actions[x][y])
+
+            except IndexError:
+                arr_unavailable_action_options.append(dict_horiz_actions[x][y])
+    
+    for x in dict_vert_actions:
+        for y in dict_vert_actions[x]:
+
+            potential_int_loc_x = user_player.int_loc_x + x 
+            potential_int_loc_y = user_player.int_loc_y + y 
+
+            try:
+                if potential_int_loc_y < 0:
+                    raise IndexError
+                potential_tile = arr_world_map_backend[potential_int_loc_x][potential_int_loc_y]
+                arr_available_action_options.append(dict_vert_actions[x][y])
+            except IndexError:
+                arr_unavailable_action_options.append(dict_vert_actions[x][y])
+    
+
+    a = 1
+    print(f"You can travel in the following directions:\n")
+    for available_action in arr_available_action_options:
+        if available_action in ['No Movement', 'Stationary']:
+            pass
+        else:
+            print(f"{a}. {available_action}")
+            a += 1
+    
+    if ((len(arr_unavailable_action_options)) == 0):
+        pass
+    else:
+        b = 1
+        print(f"You cannot travel in the following directions:\n")
+        for unavailable_action in arr_unavailable_action_options:
+            print(f"{b}. {unavailable_action}")
+            b += 1 
+    
 
 def active_tile_validation(arr_world_map_backend, user_player, chosen_direction_int_loc_x, chosen_direction_int_loc_y):
     

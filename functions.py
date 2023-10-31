@@ -22,7 +22,7 @@ def set_player_home_city() -> str:
     chosen_user_home_city = input("\nAnd where are you from originally Sailor?\n")
     return chosen_user_home_city
 
-def available_action_options(user_player, arr_world_map_backend, dict_horiz_actions, dict_vert_actions):
+def available_action_direction_options(user_player, arr_world_map_backend, dict_horiz_actions, dict_vert_actions):
 
     arr_available_action_options = []
     arr_unavailable_action_options = []
@@ -70,7 +70,7 @@ def available_action_options(user_player, arr_world_map_backend, dict_horiz_acti
         pass
     else:
         b = 1
-        print(f"You cannot travel in the following directions:\n")
+        print(f"\nYou cannot travel in the following directions:\n")
         for unavailable_action in arr_unavailable_action_options:
             print(f"{b}. {unavailable_action}")
             b += 1 

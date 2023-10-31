@@ -1,6 +1,6 @@
 from Player import Player
 from functions import set_player_name, set_player_age, set_player_home_city
-from functions import active_tile_validation, proposed_tile_game_sequence, islands_conquered_checklist, available_action_options
+from functions import active_tile_validation, proposed_tile_game_sequence, islands_conquered_checklist, available_action_direction_options
 from Tile import MapTile, BattleTile
 from data_structures import arr_world_map_back_end, arr_world_map_front_end, arr_world_map_islands_collection
 from data_structures import action_options_travel_north, action_options_travel_east, action_options_travel_south, action_options_travel_west, action_options_game_quit
@@ -28,7 +28,7 @@ def play():
 
         #Based on the Player's current location, dynamically present a series of viable options available to the Player
         #Based on the Player's current location, dynamically present a series of unviable options available to the Player
-        available_action_options(user_player, arr_world_map_back_end, dict_action_horiz_vector_options, dict_action_vertical_vector_options)
+        available_action_direction_options(user_player, arr_world_map_back_end, dict_action_horiz_vector_options, dict_action_vertical_vector_options)
 
         
         #Prompt the Player to make a decision which has the ability to interact with the game based on the options above
